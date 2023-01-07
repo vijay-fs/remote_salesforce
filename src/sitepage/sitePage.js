@@ -3,71 +3,7 @@ import CardDesign from "../components/CardDesign";
 import Header from "../components/Header";
 import { useLocation } from "react-router-dom";
 import { data } from "../data/blogdata";
-
-//   {
-//     id: 1,
-//     title: "SALESFORCE",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "LIVE",
-//     category: "Marketing",
-//     image: img,
-//   },
-//   {
-//     id: 2,
-//     title: "MARKETING CLOUD",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "LIVE",
-//     category: "Marketing",
-//     image: img1,
-//   },
-//   {
-//     id: 3,
-//     title: "ANALYTICS CLOUD",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "ARCHIVED",
-//     category: "Marketing",
-//     image: img,
-//   },
-//   {
-//     id: 4,
-//     title: "SOCIAL CLOUD",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "DRAFT",
-//     category: "Sales",
-//     image: sales,
-//   },
-//   {
-//     id: 5,
-//     title: "SOCIAL CLOUD",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "LIVE",
-//     category: "Sales",
-//     image: sales1,
-//   },
-//   {
-//     id: 6,
-//     title: "SOCIAL CLOUD",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "DRAFT",
-//     category: "Sales",
-//     image: sales2,
-//   },
-//   {
-//     id: 7,
-//     title: "Top tricks to Bargaraining",
-//     date: "2021-07-01",
-//     duration: "1:00",
-//     status: "LIVE",
-//     category: "Sales",
-//     image: sales,
-//   },
-// ];
+import DropDown from "../components/dropdown";
 const Knowledge = () => {
   const location = useLocation();
   console.log("pathname", location.pathname);
@@ -108,34 +44,41 @@ const Knowledge = () => {
     <>
       <Header Header={catKey} />
       <div className="ml-56 mt-20">
-        <ul className="flex gap-8 mx-20 font-semibold">
-          <li
-            className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
-            onClick={all}
-          >
-            ALL
-          </li>
-          <li
-            className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
-            onClick={LIVEdata}
-          >
-            LIVE
-          </li>
-          <li
-            className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
-            onClick={Draftdata}
-          >
-            DRAFT
-          </li>
-          <li
-            className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
-            onClick={ARCHIVEDdata}
-          >
-            ARCHIVED
-          </li>
-        </ul>
+        <div className="flex justify-between items-center">
+          <div>
+            <ul className="flex gap-8 mx-20 font-semibold">
+              <li
+                className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
+                onClick={all}
+              >
+                ALL
+              </li>
+              <li
+                className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
+                onClick={LIVEdata}
+              >
+                LIVE
+              </li>
+              <li
+                className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
+                onClick={Draftdata}
+              >
+                DRAFT
+              </li>
+              <li
+                className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
+                onClick={ARCHIVEDdata}
+              >
+                ARCHIVED
+              </li>
+            </ul>
+          </div>
+          <div>
+            <DropDown />
+          </div>
+        </div>
         <>
-          <div className="flex flex-wrap px-12 pt-6 gap-8">
+          <div className="flex flex-wrap px-12 pt-4 gap-6">
             {value.map((item) => (
               <CardDesign
                 key={item.id}
@@ -145,6 +88,7 @@ const Knowledge = () => {
                 date={item.date}
                 duration={item.duration}
                 category={item.category}
+                status={item.status}
               />
             ))}
           </div>
