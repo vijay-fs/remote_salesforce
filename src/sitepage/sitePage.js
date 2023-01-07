@@ -108,7 +108,7 @@ const Knowledge = () => {
     <>
       <Header Header={catKey} />
       <div className="ml-56 mt-20">
-        <ul className="flex gap-8 mx-20">
+        <ul className="flex gap-8 mx-20 font-semibold">
           <li
             className="hover:bg-violet-600 hover:text-white active:bg-violet-700 rounded-md px-2 py-1 cursor-pointer"
             onClick={all}

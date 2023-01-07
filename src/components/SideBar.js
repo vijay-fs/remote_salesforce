@@ -4,7 +4,7 @@ import { topmenu, bottommenu } from "../data/menudata";
 
 const sideBar = () => {
   return (
-    <div className="container top-0 fixed h-full w-56 bg-black border-cyan-400 border-r-2 flex flex-col justify-between z-[1]">
+    <div className="container top-0 fixed h-full w-52 bg-black border-cyan-400 border-r-2 flex flex-col justify-between z-[1]">
       <div className="mx-auto">
         <div className="p-4">
           <h1 className="text-white text-center">Remote Salesforce</h1>

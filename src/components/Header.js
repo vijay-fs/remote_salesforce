@@ -5,9 +5,9 @@ const Header = (props) => {
   return (
     <div className="fixed bg-slate-100 space-x-56 top-0 flex justify-between rounded drop-shadow-md w-full">
       <div>
-        <h1 className="text-black p-4 ml-56">{props.Header}</h1>
+        <h1 className="text-black p-4 ml-56 font-bold">{props.Header}</h1>
       </div>
-      <div className="flex items-center justify-items-center">
+      <div className="flex items-center justify-items-center gap-4 pr-4">
         <button className="bg-cyan-400 text-white rounded p-1 text-sm">
           CREATE COURSE
         </button>
